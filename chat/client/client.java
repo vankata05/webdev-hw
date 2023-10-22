@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
+import java.sql.Timestamp;
 
 
 public class client {
@@ -26,7 +27,8 @@ public class client {
                             BufferedReader in = new BufferedReader(new InputStreamReader(soc.getInputStream()));
                             String receivedMsg;
                             while ((receivedMsg = in.readLine()) != null) {
-                                System.out.println(receivedMsg);
+                                System.out.println("[" + Timestamp.valueOf(java.time.LocalDateTime.now()) + "] " + receivedMsg); 
+
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -53,6 +55,5 @@ public class client {
             e.printStackTrace();
         }
     }
-
 }
 
