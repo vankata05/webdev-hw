@@ -39,7 +39,7 @@ public class client {
                     String[] msg = usrIn.split(" ");
                     String message = msg[1];
                     PrintStream out = new PrintStream(soc.getOutputStream());
-                    out.println(nick + ":" +message);
+                    out.println(nick + ":" + message);
 
                 }else if(usrIn.startsWith("/nick ")){
                     String[] name = usrIn.split(" ");
